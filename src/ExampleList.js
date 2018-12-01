@@ -3,30 +3,7 @@
 import * as React from 'react';
 import { FlatList, Text, View } from 'react-native';
 import { List, Divider, withTheme } from 'react-native-paper';
-// import AppbarExample from './AppbarExample';
-// import BannerExample from './BannerExample';
-// import BottomNavigationExample from './BottomNavigationExample';
-// import ButtonExample from './ButtonExample';
-// import CardExample from './CardExample';
-// import CheckboxExample from './CheckboxExample';
-// import ChipExample from './ChipExample';
-// import DialogExample from './DialogExample';
-import Homepage from './HomePage';
-// import DividerExample from './DividerExample';
-// import FABExample from './FABExample';
-// import IconButtonExample from './IconButtonExample';
-// import ListAccordionExample from './ListAccordionExample';
-// import ListSectionExample from './ListSectionExample';
-// import ProgressBarExample from './ProgressBarExample';
-// import RadioButtonExample from './RadioButtonExample';
-// import RadioButtonGroupExample from './RadioButtonGroupExample';
-// import SearchbarExample from './SearchbarExample';
-// import SnackbarExample from './SnackbarExample';
-// import SurfaceExample from './SurfaceExample';
-// import SwitchExample from './SwitchExample';
-// import TextExample from './TextExample';
-// import TextInputExample from './TextInputExample';
-// import TouchableRippleExample from './TouchableRippleExample';
+import Homepage from './HomePage'
 import type { Theme } from 'react-native-paper/types';
 
 type Props = {
@@ -35,29 +12,6 @@ type Props = {
 };
 
 export const examples = {
-  // appbar: AppbarExample,
-  // banner: BannerExample,
-  // bottomNavigation: BottomNavigationExample,
-  // button: ButtonExample,
-  // card: CardExample,
-  // checkbox: CheckboxExample,
-  // chip: ChipExample,
-  // dialog: DialogExample,
-  // divider: DividerExample,
-  // fab: FABExample,
-  // iconButton: IconButtonExample,
-  // listAccordion: ListAccordionExample,
-  // listSection: ListSectionExample,
-  // progressbar: ProgressBarExample,
-  // radio: RadioButtonExample,
-  // radioGroup: RadioButtonGroupExample,
-  // searchbar: SearchbarExample,
-  // snackbar: SnackbarExample,
-  // surface: SurfaceExample,
-  // switch: SwitchExample,
-  // text: TextExample,
-  // textInput: TextInputExample,
-  // touchableRipple: TouchableRippleExample,
   homePage: Homepage,
 };
 
@@ -84,8 +38,7 @@ class ExampleList extends React.Component<Props> {
       },
     } = this.props;
 
-    // return <Homepage />;
-    return <View><Text>Heloooooooo</Text></View>
+    return <Homepage />;
   }
 }
 
