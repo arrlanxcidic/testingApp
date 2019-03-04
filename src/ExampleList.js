@@ -19,7 +19,7 @@ const data = Object.keys(examples).map(id => ({ id, data: examples[id] }));
 
 class ExampleList extends React.Component<Props> {
   static navigationOptions = {
-    title: 'Islamic Habit',
+    title: 'testing app',
   };
 
   _renderItem = ({ item }) => (

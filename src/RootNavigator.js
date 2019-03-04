@@ -40,7 +40,7 @@ const AppNavigator = createStackNavigator(
       header: (
         <Appbar.Header>
           <Appbar.Action icon="menu" onPress={() => navigation.openDrawer()} />
-          <Appbar.Content title="Islamic Habit" />
+          <Appbar.Content title="testing app" />
         </Appbar.Header>
       ),
     }),

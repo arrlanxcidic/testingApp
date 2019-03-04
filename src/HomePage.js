@@ -17,9 +17,10 @@ import {
   withTheme,
   BottomNavigation,
 } from 'react-native-paper';
-import HabitView from './components/ListHabit';
-import ReminderView from './components/ListReminder';
-import Profile from './components/Profile';
+import Test1 from './components/Test.1';
+import Test2 from './components/Test.2';
+import Test3 from './components/Test.3';
+import Test4 from './components/Test.4';
 
 type State = {
   index: number,
@@ -147,29 +148,35 @@ const habits = [
 ];
 
 class ButtomNavigationExample extends React.Component<{}, State> {
-  static title = 'Islamic Habit';
+  static title = 'testing app';
 
   state = {
     index: 0,
     routes: [
       {
-        key: 'accessibilitynew',
-        title: 'Habit',
+        key: 'test1',
+        title: '1',
         icon: 'accessibility',
         color: '#c51162',
       },
       {
-        key: 'announcement',
-        title: 'Reminder',
-        icon: 'announcement',
+        key: 'test2',
+        title: '2',
+        icon: 'accessibility',
         color: '#c51162',
       },
       {
-        key: 'profil',
-        title: 'Profil',
-        icon: 'face',
+        key: 'test3',
+        title: '3',
+        icon: 'accessibility',
         color: '#c51162',
       },
+      {
+        key: 'test4',
+        title: '4',
+        icon: 'accessibility',
+        color: '#c51162',
+      }
     ],
   };
 
@@ -195,9 +202,10 @@ class ButtomNavigationExample extends React.Component<{}, State> {
         navigationState={this.state}
         onIndexChange={index => this.setState({ index })}
         renderScene={BottomNavigation.SceneMap({
-          accessibilitynew: HabitView,
-          announcement: ReminderView,
-          profil: Profile,
+          test1: Test1,
+          test2: Test2,
+          test3: Test3,
+          test4: Test4,
         })}
       />
     );

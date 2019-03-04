@@ -23,19 +23,34 @@ import {
 import type { Theme } from 'react-native-paper/types';
 
 type State = {
-  name: string,
-  email: string,
+  input: string,
+  result: Array,
 };
 type Props = {
   theme: Theme,
 };
 
-class ReminderView extends React.Component<Props, State> {
+class AppView extends React.Component<Props, State> {
   state = {
-    name: 'Rudi Hartanto',
-    email: 'rudi.h@mail.com',
+    input: '',
+    result: []
   };
+  handler = () => {
+    const n = this.state.input;
+    if (n) {
+      let bilangan = n > 0 && n.toString();
+      let length = bilangan.split('').length;
+      let result = [];
+      for (let i = 0; i < length; i++) {
+        const head = bilangan.slice(i, i + 1) ;
+        const end = bilangan.slice(i + 1).split('').map(() => 0).join('')
+        result.push(head + end)
+      }
+      this.setState({ result: result })
+    }
+  }
   render() {
+    const result = this.state.result;
     const {
       theme: {
         colors: { background },
@@ -50,28 +65,19 @@ class ReminderView extends React.Component<Props, State> {
         <ScrollView style={[styles.container, { backgroundColor: background }]}>
           <TextInput
             mode="outlined"
-            disabled
             style={styles.inputContainerStyle}
-            label="Nama"
-            value="Rudi Susanto"
+            label="Masukan Input"
+            value={this.state.input}
+            onChangeText={(e) => { this.setState({ input: e }) }}
           />
-          <TextInput
-            mode="outlined"
-            disabled
-            style={styles.inputContainerStyle}
-            label="Email"
-            value="rudi@gmail.com"
-          />
-          <TextInput
-            mode="outlined"
-            disabled
-            style={styles.inputContainerStyle}
-            label="No Hp"
-            value="+6293743847838"
-          />
-          <Button onPress={() => {}} style={styles.button}>
-            Edit
+          <Button onPress={this.handler} style={styles.button}>
+            Process
           </Button>
+          <Card>
+            {result.map((value, i) => (
+              <Text key={i}>{value}</Text>
+            ))}
+          </Card>
         </ScrollView>
       </KeyboardAvoidingView>
     );
@@ -94,4 +100,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withTheme(ReminderView);
+export default withTheme(AppView);
